@@ -11,13 +11,8 @@ cd dynamic-form-builder
 
 ```bash
 composer install
-```
 
-Then edit the `.env` file and set your database credentials:
-```
-DB_DATABASE=your_db_name
-DB_USERNAME=your_db_user
-DB_PASSWORD=your_db_password
+php artisan key:generate
 ```
 Run Migrations and Seeders
 ```bash
