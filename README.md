@@ -12,7 +12,7 @@ cd dynamic-form-builder
 ```bash
 composer install
 ```
-```
+
 Then edit the `.env` file and set your database credentials:
 ```
 DB_DATABASE=your_db_name
