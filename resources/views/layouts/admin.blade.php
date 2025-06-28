@@ -36,7 +36,10 @@
                     <li class="nav-item"> <a class="nav-link" href="{{ route('forms.submissions-list') }}">Form
                             Submissions</a> </li>
                 </ul>
-                <a class="btn btn-secondary" type="submit">Logout</a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-secondary">Logout</button>
+                </form>
             </div>
         </div>
     </nav>
