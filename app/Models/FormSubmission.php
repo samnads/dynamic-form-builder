@@ -16,4 +16,9 @@ class FormSubmission extends Model
     {
         return $this->belongsTo(Form::class, 'form_id');
     }
+
+    public function data()
+    {
+        return $this->hasMany(FormData::class);
+    }
 }

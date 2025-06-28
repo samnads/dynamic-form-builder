@@ -26,7 +26,7 @@ class FormController extends Controller
 
     public function datatable(Request $request)
     {
-        $data = Form::query();
+        $data = Form::latest();
         return DataTables::of($data)
             ->addIndexColumn()
             ->addColumn('url', function ($row) {
@@ -44,10 +44,20 @@ class FormController extends Controller
 
     public function submissionsListDatatable(Request $request)
     {
-        $data = FormSubmission::with(['form']);
+        $data = FormSubmission::with(['form'])->latest();
         return DataTables::of($data)
             ->addIndexColumn()
-            ->rawColumns(['url'])
+            ->addColumn('submitted_data', function ($submission) {
+                $html = '<table class="table table-sm table-success table-striped">';
+                foreach ($submission->data as $entry) {
+                    $label = $entry->field->label ?? 'N/A';
+                    $value = $entry->value;
+                    $html .= "<tr><th>{$label}</th><td>{$value}</td></tr>";
+                }
+                $html .= '</table>';
+                return $html;
+            })
+            ->rawColumns(['submitted_data'])
             ->make(true);
     }
 

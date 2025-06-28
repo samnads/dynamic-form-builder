@@ -6,6 +6,7 @@
         <tr>
             <th class="text-left">Sl. No.</th>
             <th>Form Title</th>
+            <th>Data</th>
         </tr>
     </thead>
     <tbody>

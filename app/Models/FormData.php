@@ -10,4 +10,9 @@ class FormData extends Model
     use SoftDeletes;
 
     protected $fillable = ['form_submission_id', 'form_field_id', 'value'];
+
+    public function field()
+    {
+        return $this->belongsTo(FormField::class, 'form_field_id');
+    }
 }
