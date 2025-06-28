@@ -11,8 +11,6 @@ cd dynamic-form-builder
 
 ```bash
 composer install
-
-php artisan key:generate
 ```
 Run Migrations and Seeders
 ```bash
