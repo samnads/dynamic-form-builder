@@ -6,14 +6,16 @@ Follow the steps below to run this project on your local machine.
 
 ```bash
 git clone https://github.com/samnads/dynamic-form-builder.git
-
+```
+```bash
 cd dynamic-form-builder
-
+```
+```bash
 composer install
 ```
 ## Update database credentials in .env file
 
-```bash
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -24,7 +26,8 @@ DB_PASSWORD=YOUR_PASSWORD
 ## Migrate and Seed database
 ```bash
 php artisan migrate
-
+```
+```bash
 php artisan db:seed
 ```
 ## Run the application
@@ -32,7 +35,7 @@ php artisan db:seed
 php artisan serve
 ```
 ## Login Credentials
-```bash
+```
 Username : admin@example.com
 Password : 12345
 ```
