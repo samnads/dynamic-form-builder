@@ -1,22 +1,42 @@
 
-## 🖥 Local Setup Instructions
+## Local Setup Instructions
 
 Follow the steps below to run this project on your local machine.
 
 
 ```bash
 git clone https://github.com/samnads/dynamic-form-builder.git
-cd dynamic-form-builder
-```
 
-```bash
+cd dynamic-form-builder
+
 composer install
 ```
-Run Migrations and Seeders
+## Update database credentials in .env file
+
 ```bash
-php artisan migrate --seed
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=dynamic_form_builder
+DB_USERNAME=-YOUR_USERNAME
+DB_PASSWORD=YOUR_PASSWORD
 ```
-To process queued jobs like form submission emails:
+## Migrate and Seed database
+```bash
+php artisan migrate
+
+php artisan db:seed
+```
+## Run the application
+```bash
+php artisan serve
+```
+## Login Credentials
+```bash
+Username : admin@example.com
+Password : 12345
+```
+To process queued jobs (form submission)
 ```bash
 php artisan queue:work
 ```
