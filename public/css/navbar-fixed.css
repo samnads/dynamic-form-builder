@@ -7,3 +7,8 @@ body {
   color: red;
   font-size: small;
 }
+
+.ts-wrapper.disabled,
+.ts-wrapper.disabled input {
+  cursor: not-allowed
+}

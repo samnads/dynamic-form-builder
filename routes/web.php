@@ -20,6 +20,8 @@ Route::middleware('auth')->group(function () {
         Route::post('save', [FormController::class, 'save'])->name('save');
         Route::get('submissions', [FormController::class, 'submissionsList'])->name('submissions-list');
         Route::get('submissions-datatable', [FormController::class, 'submissionsListDatatable'])->name('submissions-datatable');
+        Route::get('edit/{id}', [FormController::class, 'editForm'])->name('edit');
+        Route::put('update/{id}', [FormController::class, 'update'])->name('update');
     });
 });
 Route::prefix('form')->name('form.')->group(function () {

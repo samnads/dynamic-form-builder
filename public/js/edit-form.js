@@ -58,7 +58,20 @@ $(document).ready(function () {
             }
         }
     });
-    new TomSelect('.data', tom_options);
+    $('.data').each(function () {
+        new TomSelect(this, tom_options);
+        let type = $(this).closest('.repeater-item').find(':selected').data('type');
+        let selectEl = $(this).closest('.repeater-item').find('.data')[0];
+        if (selectEl && selectEl.tomselect) {
+            let tom = selectEl.tomselect;
+            if (type === 'select') {
+                tom.enable();
+            } else {
+                tom.clear();
+                tom.disable();
+            }
+        }
+    });
     $(document).on('change', '.field_type', function () {
         let type = $(this).find(':selected').data('type');
         let selectEl = $(this).closest('.repeater-item').find('.data')[0];
@@ -90,7 +103,7 @@ $(document).ready(function () {
             $('button[type="submit"]', form).attr('disabled', true);
             $.ajax({
                 url: new_form.attr('action'),
-                type: 'POST',
+                type: 'PUT',
                 data: new_form.serialize(), // Serialize form data
                 success: function (response) {
                     alert(response.message);

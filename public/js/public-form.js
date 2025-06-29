@@ -9,12 +9,14 @@ $(document).ready(function () {
             error.insertAfter(element);
         },
         submitHandler: function (form) {
+            $('button[type="submit"]', form).attr('disabled', true);
             $.ajax({
                 url: public_form.attr('action'),
                 type: 'POST',
                 data: public_form.serialize(), // Serialize form data
                 success: function (response) {
                     alert(response.message);
+                    location.reload();
                 },
                 error: function (xhr) {
                     alert('Submission failed!');

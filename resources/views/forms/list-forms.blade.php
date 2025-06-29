@@ -7,6 +7,7 @@
             <th class="text-left">Sl. No.</th>
             <th>Title</th>
             <th>Public URL</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>

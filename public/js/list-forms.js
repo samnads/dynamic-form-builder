@@ -6,7 +6,8 @@ $(document).ready(function () {
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
             { data: 'title', name: 'title' },
-            { data: 'url', name: 'url' }
+            { data: 'url', name: 'url' },
+            { data: 'actions', name: 'actions' }
         ]
     });
 });
